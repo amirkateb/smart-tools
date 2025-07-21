@@ -12,8 +12,6 @@ A powerful all-in-one CLI toolkit for Linux servers – with smart cleanup, DNS 
 curl -sSL https://raw.githubusercontent.com/amirkateb/smart-tools/main/install.sh | bash
 ```
 
-📌 Replace `YOUR_GITHUB` with your GitHub username or repo path.
-
 ---
 
 ## 🧠 Main Menu
@@ -77,8 +75,6 @@ Main sections include:
 ```bash
 curl -sSL https://raw.githubusercontent.com/amirkateb/smart-tools/main/install.sh | bash
 ```
-
-📌 `YOUR_GITHUB` را با نام کاربری گیت‌هاب خود یا آدرس رپو جایگزین کنید.
 
 ---
 
