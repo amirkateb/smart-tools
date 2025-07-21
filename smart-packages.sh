@@ -9,3 +9,5 @@ echo "🔄 Checking for Outdated Packages"
 echo "================================="
 sudo apt update -y > /dev/null
 apt list --upgradable 2>/dev/null | grep -v "Listing..." || echo "✅ All packages are up-to-date"
+echo -e "\n\033[1;33m✨ Press any key to return to main menu...\033[0m"
+read -n 1 -s
