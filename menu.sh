@@ -1,6 +1,7 @@
 #!/bin/bash
 
 YELLOW='\033[1;33m'
+CYAN='\033[1;36m'
 NC='\033[0m'
 
 pause_return() {
@@ -12,7 +13,8 @@ pause_return() {
 main_menu() {
   while true; do
     clear
-    echo "🧠 Smart Server Tools"
+    echo -e "${CYAN}🧠 Smart Server Tools${NC}"
+    echo -e "${YELLOW}Developed by AmirMohammad Kateb Saber${NC}"
     echo "=============================="
     echo "1) 🧹 System Maintenance"
     echo "2) 🌐 Network Tools"
