@@ -1,5 +1,8 @@
 #!/bin/bash
-
+echo ""
+echo -e "\033[1;36m🚀 Smart Server Tools Installer\033[0m"
+echo -e "\033[1;34mDeveloped by AmirMohammad Kateb Saber\033[0m"
+echo "==================================="
 echo ""
 echo "📦 Installing Smart Server Tools..."
 echo "==================================="
