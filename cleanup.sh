@@ -36,5 +36,3 @@ sudo find / -type f -size +500M -exec ls -lh {} \; 2>/dev/null | sort -k 5 -hr |
 
 df -h /
 echo "✅ Cleanup completed!"
-echo -e "\n\033[1;33m✨ Press any key to return to main menu...\033[0m"
-read -n 1 -s
