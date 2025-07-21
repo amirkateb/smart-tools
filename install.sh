@@ -12,7 +12,7 @@ echo ""
 echo "📦 Installing Smart Server Tools..."
 echo "==================================="
 
-# ابزارها و فایل‌ها با نام مقصد در سیستم
+
 declare -A TOOLS=(
   [cleanup-ultra]="cleanup.sh"
   [smart-dns]="smart-dns.sh"
@@ -38,7 +38,7 @@ declare -A TOOLS=(
   [smart-tools]="menu.sh"
 )
 
-# مسیر نصب
+
 BIN_DIR="/usr/local/bin"
 
 echo "📁 Downloading and installing scripts..."
@@ -50,7 +50,7 @@ for name in "${!TOOLS[@]}"; do
   sudo chmod +x "$dest"
 done
 
-# فایل domains.txt جدا نصب می‌شود
+
 echo "📁 Downloading domains.txt..."
 sudo curl -sSL "$BASE_URL/domains.txt" -o "$BIN_DIR/domains.txt"
 
