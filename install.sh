@@ -1,4 +1,9 @@
 #!/bin/bash
+
+REPO="amirkateb/smart-tools"
+BRANCH="main"
+BASE_URL="https://raw.githubusercontent.com/$REPO/$BRANCH"
+
 echo ""
 echo -e "\033[1;36m🚀 Smart Server Tools Installer\033[0m"
 echo -e "\033[1;34mDeveloped by AmirMohammad Kateb Saber\033[0m"
@@ -7,92 +12,56 @@ echo ""
 echo "📦 Installing Smart Server Tools..."
 echo "==================================="
 
-# لیست فایل‌های اجرایی
-FILES=(
-  cleanup.sh
-  smart-dns.sh
-  check-reality.sh
-  smart-cron.sh
-  smart-status.sh
-  smart-net.sh
-  smart-ping.sh
-  smart-ports.sh
-  smart-updater.sh
-  smart-traffic.sh
-  smart-speed.sh
-  smart-fail2ban.sh
-  smart-secure.sh
-  smart-sshkey-check.sh
-  smart-packages.sh
-  smart-clock.sh
-  smart-users.sh
-  smart-ssh-harden.sh
-  smart-ip-checkhost.sh
-  smart-help.sh
-  uninstall.sh
-  menu.sh
-  domains.txt
+# ابزارها و فایل‌ها با نام مقصد در سیستم
+declare -A TOOLS=(
+  [cleanup-ultra]="cleanup.sh"
+  [smart-dns]="smart-dns.sh"
+  [check-reality]="check-reality.sh"
+  [smart-cron]="smart-cron.sh"
+  [smart-status]="smart-status.sh"
+  [smart-net]="smart-net.sh"
+  [smart-ping]="smart-ping.sh"
+  [smart-ports]="smart-ports.sh"
+  [smart-updater]="smart-updater.sh"
+  [smart-traffic]="smart-traffic.sh"
+  [smart-speed]="smart-speed.sh"
+  [smart-fail2ban]="smart-fail2ban.sh"
+  [smart-secure]="smart-secure.sh"
+  [smart-sshkey-check]="smart-sshkey-check.sh"
+  [smart-packages]="smart-packages.sh"
+  [smart-clock]="smart-clock.sh"
+  [smart-users]="smart-users.sh"
+  [smart-ssh-harden]="smart-ssh-harden.sh"
+  [smart-ip-checkhost]="smart-ip-checkhost.sh"
+  [smart-help]="smart-help.sh"
+  [uninstall-smart-tools]="uninstall.sh"
+  [smart-tools]="menu.sh"
 )
 
 # مسیر نصب
 BIN_DIR="/usr/local/bin"
 
-# کپی ابزارها با نام مناسب
-echo "📁 Copying scripts to $BIN_DIR..."
-sudo cp cleanup.sh             $BIN_DIR/cleanup-ultra
-sudo cp smart-dns.sh           $BIN_DIR/smart-dns
-sudo cp check-reality.sh       $BIN_DIR/check-reality
-sudo cp smart-cron.sh          $BIN_DIR/smart-cron
-sudo cp smart-status.sh        $BIN_DIR/smart-status
-sudo cp smart-net.sh           $BIN_DIR/smart-net
-sudo cp smart-ping.sh          $BIN_DIR/smart-ping
-sudo cp smart-ports.sh         $BIN_DIR/smart-ports
-sudo cp smart-updater.sh       $BIN_DIR/smart-updater
-sudo cp smart-traffic.sh       $BIN_DIR/smart-traffic
-sudo cp smart-speed.sh         $BIN_DIR/smart-speed
-sudo cp smart-fail2ban.sh      $BIN_DIR/smart-fail2ban
-sudo cp smart-secure.sh        $BIN_DIR/smart-secure
-sudo cp smart-sshkey-check.sh  $BIN_DIR/smart-sshkey-check
-sudo cp smart-packages.sh      $BIN_DIR/smart-packages
-sudo cp smart-clock.sh         $BIN_DIR/smart-clock
-sudo cp smart-users.sh         $BIN_DIR/smart-users
-sudo cp smart-ssh-harden.sh    $BIN_DIR/smart-ssh-harden
-sudo cp smart-ip-checkhost.sh  $BIN_DIR/smart-ip-checkhost
-sudo cp smart-help.sh          $BIN_DIR/smart-help
-sudo cp uninstall.sh           $BIN_DIR/uninstall-smart-tools
-sudo cp menu.sh                $BIN_DIR/smart-tools
-
-# کپی فایل دامنه‌ها
-echo "📁 Copying domains.txt to $BIN_DIR/domains.txt..."
-sudo cp domains.txt $BIN_DIR/domains.txt
-
-# تنظیم پرمیشن اجرایی برای همه ابزارها
-echo "🔐 Setting executable permissions..."
-for tool in cleanup-ultra smart-dns check-reality smart-cron \
-            smart-status smart-net smart-ping smart-ports smart-updater \
-            smart-traffic smart-speed smart-fail2ban smart-secure \
-            smart-sshkey-check smart-packages smart-clock smart-users \
-            smart-ssh-harden smart-ip-checkhost smart-help \
-            uninstall-smart-tools smart-tools
-do
-  sudo chmod +x "$BIN_DIR/$tool"
+echo "📁 Downloading and installing scripts..."
+for name in "${!TOOLS[@]}"; do
+  url="$BASE_URL/${TOOLS[$name]}"
+  dest="$BIN_DIR/$name"
+  echo "⬇️  $name ← $url"
+  sudo curl -sSL "$url" -o "$dest"
+  sudo chmod +x "$dest"
 done
 
-# پیام نهایی
+# فایل domains.txt جدا نصب می‌شود
+echo "📁 Downloading domains.txt..."
+sudo curl -sSL "$BASE_URL/domains.txt" -o "$BIN_DIR/domains.txt"
+
 echo ""
 echo "✅ Installation complete!"
-echo "🚀 You can now run the toolkit with:"
+echo "🚀 Run the toolkit with:"
 echo ""
 echo "    smart-tools"
 echo ""
 echo "🎯 Tools installed:"
-for tool in cleanup-ultra smart-dns check-reality smart-cron \
-            smart-status smart-net smart-ping smart-ports smart-updater \
-            smart-traffic smart-speed smart-fail2ban smart-secure \
-            smart-sshkey-check smart-packages smart-clock smart-users \
-            smart-ssh-harden smart-ip-checkhost smart-help \
-            uninstall-smart-tools
-do
+for tool in "${!TOOLS[@]}"; do
   echo "    • $tool"
 done
 echo ""
