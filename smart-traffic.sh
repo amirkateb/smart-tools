@@ -9,3 +9,6 @@ fi
 echo "📈 Network Traffic (5 seconds sample)"
 echo "====================================="
 vnstat -tr 5
+
+echo -e "\n\033[1;33m✨ Press any key to return to main menu...\033[0m"
+read -n 1 -s
