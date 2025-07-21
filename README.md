@@ -9,7 +9,7 @@ A powerful all-in-one CLI toolkit for Linux servers – with smart cleanup, DNS 
 ## 🚀 Installation (English)
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/YOUR_GITHUB/smart-tools/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/amirkateb/smart-tools/main/install.sh | bash
 ```
 
 📌 Replace `YOUR_GITHUB` with your GitHub username or repo path.
@@ -75,7 +75,7 @@ Main sections include:
 برای نصب، کافی است دستور زیر را در ترمینال لینوکس اجرا کنید:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/YOUR_GITHUB/smart-tools/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/amirkateb/smart-tools/main/install.sh | bash
 ```
 
 📌 `YOUR_GITHUB` را با نام کاربری گیت‌هاب خود یا آدرس رپو جایگزین کنید.
