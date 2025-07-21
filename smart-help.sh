@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo ""
+echo "📖 Smart Tools Help Guide"
+echo "=============================="
+echo "• cleanup-ultra        → Cleanup unused packages, cache, logs"
+echo "• smart-dns            → Auto-select the fastest DNS for a given domain"
+echo "• check-reality        → Find the best domain for Reality protocol (TLS 1.3 + low latency)"
+echo "• smart-cron           → Schedule cleanup and DNS selection tasks"
+echo "• smart-status         → Show system usage: CPU, RAM, Disk"
+echo "• smart-net            → Show network info including current DNS"
+echo "• smart-ping           → Compare ping results for Iran and Global domains"
+echo "• smart-ports          → Show open ports and listening services"
+echo "• smart-updater        → Update OS and Smart Tools"
+echo "• smart-traffic        → Real-time traffic monitor"
+echo "• smart-speed          → Run internet speed test"
+echo "• smart-fail2ban       → Show Fail2Ban status and banned IPs"
+echo "• smart-secure         → Run a basic security check on the server"
+echo "• smart-sshkey-check   → Check existing SSH authorized keys"
+echo "• smart-packages       → List large, old, and unnecessary packages"
+echo "• smart-clock          → Configure timezone (Iran, US, DE, or manual)"
+echo "• smart-users          → List system users and their status"
+echo "• smart-ssh-harden     → Harden SSH security settings"
+echo "• smart-ip-checkhost   → Test your server IP with check-host.net"
+echo ""
+echo "📦 Use 'smart-tools' to launch the full menu."
+echo ""
+
+# بازگشت به منو
+echo -e "\e[33m↩️  Press any key to return to main menu...\e[0m"
+read -n 1 -s
+smart-tools
