@@ -19,9 +19,11 @@ main_menu() {
     echo "3) 🔒 Security & Access"
     echo "4) 📦 Packages & Services"
     echo "5) ⚙️  Settings"
-    echo "6) ❌ Exit"
+    echo "6) 📖 Help / About Tools"
+    echo "7) 🗑️  Uninstall Smart Tools"
+    echo "8) ❌ Exit"
     echo "=============================="
-    read -p "Select an option [1-6]: " choice
+    read -p "Select an option [1-8]: " choice
 
     case "$choice" in
       1) system_maintenance ;;
@@ -29,7 +31,9 @@ main_menu() {
       3) security_access ;;
       4) packages_services ;;
       5) settings_menu ;;
-      6) echo "👋 Goodbye!"; exit 0 ;;
+      6) sudo smart-help ;;
+      7) sudo uninstall-smart-tools ;;
+      8) echo "👋 Goodbye!"; exit 0 ;;
       *) echo "❌ Invalid option. Try again." ; sleep 1 ;;
     esac
   done
