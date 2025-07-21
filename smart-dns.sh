@@ -131,3 +131,5 @@ resolvectl flush-caches
 
 echo -e "\n📋 Current DNS configuration:"
 resolvectl status | grep -A2 'DNS Servers'
+echo -e "\n\033[1;33m✨ Press any key to return to main menu...\033[0m"
+read -n 1 -s
