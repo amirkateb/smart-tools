@@ -7,9 +7,10 @@ while true; do
   echo "1) 🧹 Run System Cleanup"
   echo "2) 🌐 Run Smart DNS Selector"
   echo "3) 🛰️  Find Best Domain for Reality"
-  echo "4) ❌ Exit"
+  echo "4) ⏰ Schedule Auto Tasks (smart-dns / cleanup)"
+  echo "5) ❌ Exit"
   echo "============================="
-  read -p "Select an option [1-4]: " choice
+  read -p "Select an option [1-5]: " choice
 
   case "$choice" in
     1)
@@ -23,6 +24,9 @@ while true; do
       sudo check-reality
       ;;
     4)
+      sudo smart-cron
+      ;;
+    5)
       echo "👋 Goodbye!"
       exit 0
       ;;
