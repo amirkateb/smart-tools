@@ -1,64 +1,24 @@
 # 🧠 Smart Server Tools
 
-A powerful collection of Bash-based tools for system maintenance, diagnostics, security, and network analysis — designed for Linux servers.
+> Developed by **Amir Mohammad Kateb Saber**
 
-مجموعه‌ای قدرتمند از ابزارهای Bash برای نگهداری سیستم، عیب‌یابی، امنیت و تحلیل شبکه — مخصوص سرورهای لینوکس.
-
-Developed by **AmirMohammad Kateb Saber**
+A powerful all-in-one CLI toolkit for Linux servers – with smart cleanup, DNS optimization, network testing, security hardening, and more.
 
 ---
 
-## 📦 Installation | نصب
-
-To install Smart Server Tools:
-
-برای نصب ابزارها دستور زیر را اجرا کنید:
+## 🚀 Installation (English)
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/YOUR_USERNAME/smart-tools/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/YOUR_GITHUB/smart-tools/main/install.sh | bash
 ```
 
-After installation, run the toolkit with:
-
-پس از نصب، برای اجرای ابزار از دستور زیر استفاده کنید:
-
-```bash
-smart-tools
-```
+📌 Replace `YOUR_GITHUB` with your GitHub username or repo path.
 
 ---
 
-## 📋 Available Tools | ابزارهای موجود
+## 🧠 Main Menu
 
-| Tool Name                | Description (English)                                          | توضیح (فارسی)                                       |
-|--------------------------|---------------------------------------------------------------|-----------------------------------------------------|
-| `cleanup-ultra`          | Clean logs, temp, apt cache, and unused files                 | پاک‌سازی عمیق سیستم از فایل‌های اضافی و موقتی       |
-| `smart-dns`              | Find & set the fastest DNS for a given domain                 | یافتن سریع‌ترین DNS برای یک دامنه خاص              |
-| `check-reality`          | Identify the best domains for Reality/Xray/V2Ray             | شناسایی دامنه‌های مناسب برای Reality یا Xray        |
-| `smart-cron`             | Schedule auto cleanup or DNS change                          | زمان‌بندی خودکار برای اجرای ابزارها                 |
-| `smart-status`           | Overview of CPU, RAM, disk, and system load                  | نمایش خلاصه‌ای از وضعیت منابع سیستم                |
-| `smart-net`              | Show current IP, DNS, connectivity, and traceroute           | نمایش IP، DNS، اتصال و مسیر شبکه                    |
-| `smart-ping`             | Ping local (Iran) and international websites                 | بررسی تأخیر ارتباطی با سایت‌های داخلی و خارجی      |
-| `smart-ports`            | List open ports and running services                         | نمایش پورت‌های باز و سرویس‌های مرتبط               |
-| `smart-updater`          | Update Linux packages and Smart Tools itself                 | به‌روزرسانی سیستم‌عامل و ابزارهای نصب‌شده          |
-| `smart-traffic`          | Monitor live network traffic (requires vnstat)               | مشاهده ترافیک زنده شبکه                            |
-| `smart-speed`            | Install & run an internet speed test                         | اجرای تست سرعت اینترنت با نصب خودکار ابزار لازم    |
-| `smart-fail2ban`         | Show Fail2Ban status and blocked IPs                         | نمایش وضعیت و لیست IPهای بلاک شده در Fail2Ban      |
-| `smart-secure`           | Security audit for the server                                | بررسی امنیتی سرور و نمایش مشکلات احتمالی          |
-| `smart-sshkey-check`     | Show SSH keys configured per user                            | بررسی کلیدهای SSH کاربران سیستم                    |
-| `smart-packages`         | Show installed, outdated, or large packages                  | لیست پکیج‌های بزرگ، قدیمی یا بی‌استفاده             |
-| `smart-clock`            | Change timezone (Iran, USA, Germany, or custom)              | تغییر منطقه زمانی سیستم                            |
-| `smart-users`            | List system users and basic info                             | نمایش لیست کاربران و وضعیت دسترسی آن‌ها            |
-| `smart-ssh-harden`       | Secure SSH config: disable root login, change port, etc.     | امن‌سازی SSH: تغییر پورت، غیرفعال‌کردن روت و...    |
-| `smart-ip-checkhost`     | Test your server IP with multiple global locations           | بررسی IP سرور از چند کشور با سرویس CheckHost       |
-
----
-
-## 🧰 Interactive Menu | منوی تعاملی ابزارها
-
-Run `smart-tools` to open the full-featured CLI menu:
-
-برای اجرای منوی کامل ابزار از دستور زیر استفاده کنید:
+After installation, run:
 
 ```bash
 smart-tools
@@ -66,33 +26,117 @@ smart-tools
 
 Main sections include:
 
-- 🧹 System Maintenance
-- 🌐 Network Tools
-- 🔒 Security & Access
-- 📦 Packages & Services
-- ⚙️  Settings
-- ❌ Exit
+- 🧹 System Maintenance  
+- 🌐 Network Tools  
+- 🔒 Security & Access  
+- 📦 Packages & Services  
+- ⚙️  Settings  
+- 📖 Help  
+- 🗑️ Uninstall  
+- ❌ Exit  
 
 ---
 
-## 🧼 Uninstall | حذف ابزار
+## 🛠️ Available Tools
 
-To uninstall Smart Server Tools completely:
+| Command                  | Description                                           |
+|--------------------------|-------------------------------------------------------|
+| `cleanup-ultra`         | Deep system cleanup (logs, caches, temp, journal,...) |
+| `smart-dns`             | Check best IP for a domain from global resolvers      |
+| `check-reality`         | Find Reality-compatible domains                       |
+| `smart-cron`            | Schedule auto cleanup / DNS checks                    |
+| `smart-status`          | System resource overview (CPU, RAM, Disk, Load)       |
+| `smart-net`             | Check current network info, IP, DNS                   |
+| `smart-ping`            | Ping multiple global and Iranian domains              |
+| `smart-ports`           | List open ports and listening services                |
+| `smart-updater`         | Update Linux + Smart Tools                            |
+| `smart-traffic`         | Live traffic usage per interface                      |
+| `smart-speed`           | Internet speed test via CLI (installs if missing)     |
+| `smart-fail2ban`        | Fail2Ban status and banned IPs                        |
+| `smart-secure`          | Server security check-up                              |
+| `smart-sshkey-check`    | Check SSH keys per user                               |
+| `smart-packages`        | Show installed, old, and large packages               |
+| `smart-clock`           | Set timezone (Iran, US, DE, or manual)                |
+| `smart-users`           | List system users and settings                        |
+| `smart-ssh-harden`      | Secure SSH config (no root, port, key-only, etc.)     |
+| `smart-ip-checkhost`    | Test server IP via CheckHost (ping, http, tcp)        |
+| `smart-help`            | CLI Help for all tools                                |
+| `smart-uninstall`       | Uninstall Smart Tools completely                      |
 
-برای حذف کامل ابزارها:
+---
+## 🧠 ابزار هوشمند مدیریت سرور (Smart Server Tools)
+> توسعه یافته توسط **امیرمحمد کاتب صابر**
+یک جعبه‌ابزار قدرتمند و یکپارچه برای مدیریت سرورهای لینوکسی از طریق خط فرمان (CLI). این ابزار شامل امکانات متعددی مانند پاک‌سازی سیستم، بهینه‌سازی DNS، بررسی امنیت، مانیتورینگ شبکه، تست سرعت اینترنت، کنترل پورت‌ها، زمان‌بندی وظایف و بسیاری قابلیت‌های دیگر است.
+---
+## 🇮🇷 راهنمای فارسی
+
+### 🧰 نصب ابزار
+
+برای نصب، کافی است دستور زیر را در ترمینال لینوکس اجرا کنید:
 
 ```bash
-sudo /usr/local/bin/smart-uninstall
+curl -sSL https://raw.githubusercontent.com/YOUR_GITHUB/smart-tools/main/install.sh | bash
+```
+
+📌 `YOUR_GITHUB` را با نام کاربری گیت‌هاب خود یا آدرس رپو جایگزین کنید.
+
+---
+
+### 🧠 اجرای ابزار
+
+پس از نصب، با دستور زیر ابزار را اجرا کنید:
+
+```bash
+smart-tools
 ```
 
 ---
 
-## 📄 License
+### 📋 ساختار منو
 
-Smart Server Tools is open-source and available under the MIT License.
+- 🧹 نگهداری سیستم  
+- 🌐 ابزارهای شبکه  
+- 🔒 امنیت و دسترسی  
+- 📦 پکیج‌ها و سرویس‌ها  
+- ⚙️ تنظیمات  
+- 📖 راهنمای ابزار  
+- 🗑️ حذف ابزارها  
+- ❌ خروج  
 
 ---
 
-## ✨ Credits
+### 🔧 لیست ابزارها
 
-Project created and maintained by **AmirMohammad Kateb Saber**
+| دستور                       | توضیح                                               |
+|-----------------------------|-----------------------------------------------------|
+| `cleanup-ultra`           | پاک‌سازی عمیق سیستم از لاگ‌ها و فایل‌های اضافی     |
+| `smart-dns`               | بررسی بهترین IP برای دامنه از DNSهای جهانی         |
+| `check-reality`           | پیدا کردن دامنه‌های مناسب Reality برای تونل        |
+| `smart-cron`              | زمان‌بندی خودکار برای Cleanup و DNS Checker         |
+| `smart-status`            | نمایش منابع سیستم (CPU، RAM، Disk و...)             |
+| `smart-net`               | بررسی IP، DNS و وضعیت فعلی شبکه                     |
+| `smart-ping`              | پینگ دامنه‌های ایرانی و خارجی                       |
+| `smart-ports`             | نمایش پورت‌های باز و سرویس‌های فعال                 |
+| `smart-updater`           | بروزرسانی سیستم و ابزارها                           |
+| `smart-traffic`           | مانیتورینگ ترافیک لحظه‌ای                          |
+| `smart-speed`             | تست سرعت اینترنت (نصب خودکار ابزار در صورت نیاز)   |
+| `smart-fail2ban`          | وضعیت Fail2Ban و لیست IPهای مسدود شده               |
+| `smart-secure`            | بررسی امنیت سرور و اعلام ایرادات                    |
+| `smart-sshkey-check`      | بررسی کلیدهای SSH کاربران سیستم                     |
+| `smart-packages`          | نمایش پکیج‌های نصب‌شده، قدیمی و حجیم                |
+| `smart-clock`             | تنظیم ساعت سیستم (ایران، آلمان، آمریکا یا دستی)    |
+| `smart-users`             | لیست کاربران سیستم و سطح دسترسی آن‌ها               |
+| `smart-ssh-harden`        | امن‌سازی SSH (غیرفعال‌سازی روت، محدودیت ورود و...) |
+| `smart-ip-checkhost`      | بررسی IP سرور با CheckHost (ping، http، tcp)        |
+| `smart-help`              | نمایش راهنمای استفاده از ابزارها                    |
+| `smart-uninstall`         | حذف کامل ابزار Smart Tools                          |
+
+---
+
+## 🛡️ Licensing
+
+This project is open-source and free to use under MIT License.
+
+---
+
+Enjoy your optimized Linux server! ✨
