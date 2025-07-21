@@ -25,6 +25,8 @@ FILES=(
   smart-users.sh
   smart-ssh-harden.sh
   smart-ip-checkhost.sh
+  smart-help.sh
+  uninstall.sh
   menu.sh
   domains.txt
 )
@@ -53,6 +55,8 @@ sudo cp smart-clock.sh         $BIN_DIR/smart-clock
 sudo cp smart-users.sh         $BIN_DIR/smart-users
 sudo cp smart-ssh-harden.sh    $BIN_DIR/smart-ssh-harden
 sudo cp smart-ip-checkhost.sh  $BIN_DIR/smart-ip-checkhost
+sudo cp smart-help.sh          $BIN_DIR/smart-help
+sudo cp uninstall.sh           $BIN_DIR/uninstall-smart-tools
 sudo cp menu.sh                $BIN_DIR/smart-tools
 
 # کپی فایل دامنه‌ها
@@ -65,7 +69,8 @@ for tool in cleanup-ultra smart-dns check-reality smart-cron \
             smart-status smart-net smart-ping smart-ports smart-updater \
             smart-traffic smart-speed smart-fail2ban smart-secure \
             smart-sshkey-check smart-packages smart-clock smart-users \
-            smart-ssh-harden smart-ip-checkhost smart-tools
+            smart-ssh-harden smart-ip-checkhost smart-help \
+            uninstall-smart-tools smart-tools
 do
   sudo chmod +x "$BIN_DIR/$tool"
 done
@@ -82,7 +87,8 @@ for tool in cleanup-ultra smart-dns check-reality smart-cron \
             smart-status smart-net smart-ping smart-ports smart-updater \
             smart-traffic smart-speed smart-fail2ban smart-secure \
             smart-sshkey-check smart-packages smart-clock smart-users \
-            smart-ssh-harden smart-ip-checkhost
+            smart-ssh-harden smart-ip-checkhost smart-help \
+            uninstall-smart-tools
 do
   echo "    • $tool"
 done
