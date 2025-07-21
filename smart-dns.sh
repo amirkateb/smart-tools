@@ -3,75 +3,36 @@
 domain="$1"
 
 if [[ -z "$domain" ]]; then
-  echo "❌ Usage: smart-dns <domain>"
+  read -p "🔤 Enter a domain to test (e.g. google.com): " domain
+fi
+
+if [[ -z "$domain" ]]; then
+  echo "❌ No domain provided. Exiting."
   exit 1
 fi
 
 dns_list=(
-  # Google Public DNS
   8.8.8.8 8.8.4.4
-
-  # Cloudflare
   1.1.1.1 1.0.0.1
-
-  # Quad9
   9.9.9.9 149.112.112.112
-
-  # OpenDNS
   208.67.222.222 208.67.220.220
-
-  # G-Core Labs
   95.85.95.85 2.56.220.2
-
-  # Yandex DNS
   77.88.8.8 77.88.8.1
-
-  # OpenNIC
   134.195.4.2
-
-  # DNS.SB
   185.222.222.222 45.11.45.11
-
-  # Verisign
   64.6.64.6 64.6.65.6
-
-  # Freenom World
   80.80.80.80 80.80.81.81
-
-  # Comodo Secure DNS
   8.26.56.26 8.20.247.20
-
-  # Alternate DNS
   198.101.242.72 23.253.163.53
-
-  # DNS.WATCH
   84.200.69.80 84.200.70.40
-
-  # SafeDNS
   195.46.39.39 195.46.39.40
-
-  # UncensoredDNS
   91.239.100.100 89.233.43.71
-
-  # Hurricane Electric
   74.82.42.42
-
-  # Neustar DNS Advantage
   156.154.70.1 156.154.71.1
-
-  # 114DNS (China)
   114.114.114.114 114.114.115.115
-
-  # AliDNS (Alibaba)
   223.5.5.5 223.6.6.6
-
-  # Baidu DNS
   180.76.76.76
-
-  # DNSPod (Tencent)
   119.29.29.29 119.28.28.28
-
-  # ————————————
   # 🇮🇷 Iranian DNS Servers
   178.22.122.100 185.51.200.50       # Shahrad
   185.51.200.10                      # Sefroyek
@@ -131,5 +92,3 @@ resolvectl flush-caches
 
 echo -e "\n📋 Current DNS configuration:"
 resolvectl status | grep -A2 'DNS Servers'
-echo -e "\n\033[1;33m✨ Press any key to return to main menu...\033[0m"
-read -n 1 -s
