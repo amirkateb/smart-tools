@@ -1,7 +1,7 @@
 #!/bin/bash
 
 YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 current_tz=$(timedatectl | grep "Time zone" | awk '{print $3}')
 current_time=$(timedatectl | grep "Local time" | awk '{$1=""; print $0}' | sed 's/^ *//')
@@ -54,8 +54,3 @@ esac
 echo ""
 echo "📋 Updated time status:"
 timedatectl | grep -E "Time zone|Local time"
-
-# 🔄 برگشت به منوی اصلی
-echo ""
-echo -e "${YELLOW}↩️  Press any key to return to main menu...${NC}"
-read -n 1 -s
