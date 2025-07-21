@@ -66,8 +66,3 @@ echo "$resp" | jq -r 'to_entries[] | "\(.key): \(.value | .[0] // "N/A")"' | whi
     echo -e "${GREEN}✅ $line${NC}"
   fi
 done
-
-# 🔄 برگشت به منوی اصلی
-echo ""
-echo -e "${YELLOW}↩️  Press any key to return to main menu...${NC}"
-read -n 1 -s
