@@ -25,8 +25,3 @@ echo "• smart-ip-checkhost   → Test your server IP with check-host.net"
 echo ""
 echo "📦 Use 'smart-tools' to launch the full menu."
 echo ""
-
-# بازگشت به منو
-echo -e "\e[33m↩️  Press any key to return to main menu...\e[0m"
-read -n 1 -s
-smart-tools
