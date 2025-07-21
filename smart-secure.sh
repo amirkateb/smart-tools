@@ -25,3 +25,5 @@ find / -perm -4000 -type f 2>/dev/null | head -n 5
 
 echo ""
 echo "✅ Security scan complete. Manually review findings for hardening."
+echo -e "\n\033[1;33m✨ Press any key to return to main menu...\033[0m"
+read -n 1 -s
