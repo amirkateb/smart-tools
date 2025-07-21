@@ -14,3 +14,6 @@ if [ -d .git ]; then
 else
   echo "⚠️ Not a git repo. Please update manually."
 fi
+
+echo -e "\n\033[1;33m✨ Press any key to return to main menu...\033[0m"
+read -n 1 -s
