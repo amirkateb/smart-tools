@@ -1,57 +1,145 @@
 #!/bin/bash
 
-while true; do
-  echo ""
-  echo "🧠 Smart Server Tools"
-  echo "=========================================="
-  echo " 1)  🧹 Run System Cleanup"
-  echo " 2)  🌐 Run Smart DNS Selector"
-  echo " 3)  🛰️  Find Best Domain for Reality"
-  echo " 4)  ⏰ Schedule Auto Tasks (smart-dns / cleanup)"
-  echo " 5)  🧠 System Status Overview"
-  echo " 6)  🌐 Network Info & DNS"
-  echo " 7)  📶 Ping Iran & Global"
-  echo " 8)  🔓 Open Ports"
-  echo " 9)  🛠️  System & Tools Updater"
-  echo "10) 🚦 Network Traffic Monitor"
-  echo "11) 🚀 Internet Speed Test"
-  echo "12) 🛡️  Fail2Ban Status"
-  echo "13) 🔐 Server Security Check"
-  echo "14) 🔑 SSH Key Presence Check"
-  echo "15) 📦 Installed & Old Packages"
-  echo "16) 🌍 IP Test via check-host.net"
-  echo "17) 🕒 System Timezone Config"
-  echo "18) 👥 Users & Security Info"
-  echo "19) 🛡️ SSH Hardening Tool"
-  echo "20) ❌ Exit"
-  echo "=========================================="
-  read -p "Select an option [1-20]: " choice
+YELLOW='\033[1;33m'
+NC='\033[0m'
 
+pause_return() {
+  echo ""
+  echo -e "${YELLOW}↩️  Press any key to return to main menu...${NC}"
+  read -n 1 -s
+}
+
+main_menu() {
+  while true; do
+    clear
+    echo "🧠 Smart Server Tools"
+    echo "=============================="
+    echo "1) 🧹 System Maintenance"
+    echo "2) 🌐 Network Tools"
+    echo "3) 🔒 Security & Access"
+    echo "4) 📦 Packages & Services"
+    echo "5) ⚙️  Settings"
+    echo "6) ❌ Exit"
+    echo "=============================="
+    read -p "Select an option [1-6]: " choice
+
+    case "$choice" in
+      1) system_maintenance ;;
+      2) network_tools ;;
+      3) security_access ;;
+      4) packages_services ;;
+      5) settings_menu ;;
+      6) echo "👋 Goodbye!"; exit 0 ;;
+      *) echo "❌ Invalid option. Try again." ; sleep 1 ;;
+    esac
+  done
+}
+
+system_maintenance() {
+  clear
+  echo "🧹 System Maintenance"
+  echo "------------------------------"
+  echo "1) Run System Cleanup"
+  echo "2) Schedule Auto Tasks"
+  echo "3) Update System & Tools"
+  echo "4) ↩️ Back to Main Menu"
+  echo "------------------------------"
+  read -p "Select an option [1-4]: " choice
   case "$choice" in
-    1)  sudo cleanup-ultra ;;
-    2)  read -p "Enter a domain (e.g. api.kavenegar.com): " domain
-        sudo smart-dns "$domain"
-        ;;
-    3)  sudo check-reality ;;
-    4)  sudo smart-cron ;;
-    5)  sudo smart-status ;;
-    6)  sudo smart-net ;;
-    7)  sudo smart-ping ;;
-    8)  sudo smart-ports ;;
-    9)  sudo smart-updater ;;
-    10) sudo smart-traffic ;;
-    11) sudo smart-speed ;;
-    12) sudo smart-fail2ban ;;
-    13) sudo smart-secure ;;
-    14) sudo smart-sshkey-check ;;
-    15) sudo smart-packages ;;
-    16) sudo smart-ip-checkhost ;;
-    17) sudo smart-clock ;;
-    18) sudo smart-users ;;
-    19) sudo smart-ssh-harden ;;
-    20) echo "👋 Goodbye!"
-         exit 0
-         ;;
-    *)  echo "❌ Invalid option. Try again." ;;
+    1) sudo cleanup-ultra ;;
+    2) sudo smart-cron ;;
+    3) sudo smart-updater ;;
+    4) return ;;
+    *) echo "❌ Invalid option." ;;
   esac
-done
+  pause_return
+}
+
+network_tools() {
+  clear
+  echo "🌐 Network Tools"
+  echo "------------------------------"
+  echo "1) Smart DNS Selector"
+  echo "2) Best Domain for Reality"
+  echo "3) Ping Iran & Global"
+  echo "4) Network Status & DNS"
+  echo "5) Network Traffic Monitor"
+  echo "6) Internet Speed Test"
+  echo "7) IP Check via CheckHost"
+  echo "8) ↩️ Back to Main Menu"
+  echo "------------------------------"
+  read -p "Select an option [1-8]: " choice
+  case "$choice" in
+    1) read -p "Enter a domain (e.g. api.kavenegar.com): " domain
+       sudo smart-dns "$domain" ;;
+    2) sudo check-reality ;;
+    3) sudo smart-ping ;;
+    4) sudo smart-net ;;
+    5) sudo smart-traffic ;;
+    6) sudo smart-speed ;;
+    7) sudo smart-ip-checkhost ;;
+    8) return ;;
+    *) echo "❌ Invalid option." ;;
+  esac
+  pause_return
+}
+
+security_access() {
+  clear
+  echo "🔒 Security & Access"
+  echo "------------------------------"
+  echo "1) Fail2Ban Status"
+  echo "2) SSH Key Check"
+  echo "3) Harden SSH Configuration"
+  echo "4) Server Security Scan"
+  echo "5) ↩️ Back to Main Menu"
+  echo "------------------------------"
+  read -p "Select an option [1-5]: " choice
+  case "$choice" in
+    1) sudo smart-fail2ban ;;
+    2) sudo smart-sshkey-check ;;
+    3) sudo smart-ssh-harden ;;
+    4) sudo smart-secure ;;
+    5) return ;;
+    *) echo "❌ Invalid option." ;;
+  esac
+  pause_return
+}
+
+packages_services() {
+  clear
+  echo "📦 Packages & Services"
+  echo "------------------------------"
+  echo "1) Installed & Old Packages"
+  echo "2) Open Ports"
+  echo "3) ↩️ Back to Main Menu"
+  echo "------------------------------"
+  read -p "Select an option [1-3]: " choice
+  case "$choice" in
+    1) sudo smart-packages ;;
+    2) sudo smart-ports ;;
+    3) return ;;
+    *) echo "❌ Invalid option." ;;
+  esac
+  pause_return
+}
+
+settings_menu() {
+  clear
+  echo "⚙️  Settings"
+  echo "------------------------------"
+  echo "1) Set System Clock / Timezone"
+  echo "2) List System Users"
+  echo "3) ↩️ Back to Main Menu"
+  echo "------------------------------"
+  read -p "Select an option [1-3]: " choice
+  case "$choice" in
+    1) sudo smart-clock ;;
+    2) sudo smart-users ;;
+    3) return ;;
+    *) echo "❌ Invalid option." ;;
+  esac
+  pause_return
+}
+
+main_menu
