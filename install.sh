@@ -4,7 +4,7 @@ echo ""
 echo "📦 Installing Smart Server Tools..."
 echo "==================================="
 
-# فایل‌های اصلی
+# لیست فایل‌های اجرایی
 FILES=(
   cleanup.sh
   smart-dns.sh
@@ -15,44 +15,53 @@ FILES=(
   smart-ping.sh
   smart-ports.sh
   smart-updater.sh
+  smart-traffic.sh
+  smart-speed.sh
+  smart-fail2ban.sh
+  smart-secure.sh
+  smart-sshkey-check.sh
+  smart-packages.sh
   menu.sh
   domains.txt
 )
 
-# کپی ابزارها به /usr/local/bin
-echo "📁 Copying scripts to /usr/local/bin..."
-sudo cp cleanup.sh /usr/local/bin/cleanup-ultra
-sudo cp smart-dns.sh /usr/local/bin/smart-dns
-sudo cp check-reality.sh /usr/local/bin/check-reality
-sudo cp smart-cron.sh /usr/local/bin/smart-cron
-sudo cp smart-status.sh /usr/local/bin/smart-status
-sudo cp smart-net.sh /usr/local/bin/smart-net
-sudo cp smart-ping.sh /usr/local/bin/smart-ping
-sudo cp smart-ports.sh /usr/local/bin/smart-ports
-sudo cp smart-updater.sh /usr/local/bin/smart-updater
-sudo cp menu.sh /usr/local/bin/smart-tools
+# مسیر مقصد
+BIN_DIR="/usr/local/bin"
 
-# کپی لیست دامنه‌ها
-echo "📁 Copying domains.txt to /usr/local/bin/domains.txt..."
-sudo cp domains.txt /usr/local/bin/domains.txt
+# کپی ابزارها
+echo "📁 Copying scripts to $BIN_DIR..."
+sudo cp cleanup.sh           $BIN_DIR/cleanup-ultra
+sudo cp smart-dns.sh         $BIN_DIR/smart-dns
+sudo cp check-reality.sh     $BIN_DIR/check-reality
+sudo cp smart-cron.sh        $BIN_DIR/smart-cron
+sudo cp smart-status.sh      $BIN_DIR/smart-status
+sudo cp smart-net.sh         $BIN_DIR/smart-net
+sudo cp smart-ping.sh        $BIN_DIR/smart-ping
+sudo cp smart-ports.sh       $BIN_DIR/smart-ports
+sudo cp smart-updater.sh     $BIN_DIR/smart-updater
+sudo cp smart-traffic.sh     $BIN_DIR/smart-traffic
+sudo cp smart-speed.sh       $BIN_DIR/smart-speed
+sudo cp smart-fail2ban.sh    $BIN_DIR/smart-fail2ban
+sudo cp smart-secure.sh      $BIN_DIR/smart-secure
+sudo cp smart-sshkey-check.sh $BIN_DIR/smart-sshkey-check
+sudo cp smart-packages.sh    $BIN_DIR/smart-packages
+sudo cp menu.sh              $BIN_DIR/smart-tools
 
-# تنظیم پرمیشن اجرایی
+# کپی فایل دامنه‌ها
+echo "📁 Copying domains.txt to $BIN_DIR/domains.txt..."
+sudo cp domains.txt $BIN_DIR/domains.txt
+
+# پرمیشن اجرایی
 echo "🔐 Setting executable permissions..."
-for file in /usr/local/bin/cleanup-ultra \
-            /usr/local/bin/smart-dns \
-            /usr/local/bin/check-reality \
-            /usr/local/bin/smart-cron \
-            /usr/local/bin/smart-status \
-            /usr/local/bin/smart-net \
-            /usr/local/bin/smart-ping \
-            /usr/local/bin/smart-ports \
-            /usr/local/bin/smart-updater \
-            /usr/local/bin/smart-tools
+for tool in cleanup-ultra smart-dns check-reality smart-cron \
+            smart-status smart-net smart-ping smart-ports smart-updater \
+            smart-traffic smart-speed smart-fail2ban smart-secure \
+            smart-sshkey-check smart-packages smart-tools
 do
-  sudo chmod +x "$file"
+  sudo chmod +x "$BIN_DIR/$tool"
 done
 
-# نمایش راهنمای اجرا
+# پیام پایانی
 echo ""
 echo "✅ Installation complete!"
 echo "🚀 You can now run the toolkit with:"
@@ -60,13 +69,11 @@ echo ""
 echo "    smart-tools"
 echo ""
 echo "🎯 Tools installed:"
-echo "    • cleanup-ultra"
-echo "    • smart-dns"
-echo "    • check-reality"
-echo "    • smart-cron"
-echo "    • smart-status"
-echo "    • smart-net"
-echo "    • smart-ping"
-echo "    • smart-ports"
-echo "    • smart-updater"
+for tool in cleanup-ultra smart-dns check-reality smart-cron \
+            smart-status smart-net smart-ping smart-ports smart-updater \
+            smart-traffic smart-speed smart-fail2ban smart-secure \
+            smart-sshkey-check smart-packages
+do
+  echo "    • $tool"
+done
 echo ""
