@@ -51,12 +51,8 @@ case "$choice" in
     ;;
 esac
 
-# ریستارت SSH
 echo -e "\n🔄 Restarting SSH service..."
 sudo systemctl restart ssh
 echo -e "${YELLOW}✅ SSH config updated and service restarted.${NC}"
 
-# پیام برگشت
 echo ""
-echo -e "${YELLOW}↩️  Press any key to return to main menu...${NC}"
-read -n 1 -s
