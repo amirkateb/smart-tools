@@ -24,8 +24,3 @@ echo "-----------------------------------"
 echo "⚠️ Suspicious users (no login recorded):"
 lastlog | grep "Never" | awk '{print $1}'
 echo "==================================="
-
-# 🔄 برگشت به منوی اصلی
-echo ""
-echo -e "${YELLOW}↩️  Press any key to return to main menu...${NC}"
-read -n 1 -s
