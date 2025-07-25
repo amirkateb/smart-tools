@@ -3,30 +3,22 @@
 REPO_URL="https://github.com/amirkateb/smart-tools.git"
 INSTALL_DIR="$HOME/.smart-tools"
 
-echo "📦 Updating System Packages..."
+echo ""
+echo -e "\033[1;36m📦 Updating System Packages...\033[0m"
 sudo apt update && sudo apt upgrade -y
 
 echo ""
-echo "🚀 Checking for Smart Tools updates..."
-
-if [ ! -d "$INSTALL_DIR" ]; then
-  echo "📥 Cloning Smart Tools..."
-  git clone "$REPO_URL" "$INSTALL_DIR"
-else
-  echo "🔁 Pulling latest changes..."
-  cd "$INSTALL_DIR" || { echo "❌ Failed to enter $INSTALL_DIR"; exit 1; }
-  git pull
-fi
-
+echo -e "\033[1;36m🚀 Smart Tools Auto Updater\033[0m"
+echo -e "\033[1;34mChecking for the latest version...\033[0m"
 echo ""
-echo "⚙️ Reinstalling Smart Tools..."
-cd "$INSTALL_DIR" || exit 1
-sudo bash install.sh
 
-# نسخه رو از فایل VERSION بگیر (اگر هست)
-if [ -f "$INSTALL_DIR/VERSION" ]; then
-  VERSION=$(cat "$INSTALL_DIR/VERSION")
-  echo -e "\n✅ Smart Tools updated to version \033[1;32m$VERSION\033[0m"
+# Run the official install.sh from GitHub
+bash <(curl -sSL https://raw.githubusercontent.com/amirkateb/smart-tools/main/install.sh)
+
+# Show version if available
+VERSION=$(curl -sSL https://raw.githubusercontent.com/amirkateb/smart-tools/main/VERSION)
+if [[ -n "$VERSION" ]]; then
+  echo -e "\n✅ Updated to version \033[1;32m$VERSION\033[0m"
 else
   echo -e "\n✅ Smart Tools updated successfully."
 fi
