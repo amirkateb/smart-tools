@@ -1,5 +1,6 @@
 # 🧠 Smart Server Tools
-
+[![Version](https://img.shields.io/github/v/release/amirkateb/smart-tools?label=version)](https://github.com/amirkateb/smart-tools/releases)
+[![License](https://img.shields.io/github/license/amirkateb/smart-tools)](https://github.com/amirkateb/smart-tools/blob/main/LICENSE)
 > Developed by **Amir Mohammad Kateb Saber**
 
 A powerful all-in-one CLI toolkit for Linux servers – with smart cleanup, DNS optimization, network testing, security hardening, and more.
