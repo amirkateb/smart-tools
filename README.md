@@ -1,4 +1,5 @@
 # 🧠 Smart Server Tools
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/amirkateb/smart-tools/total)
 [![Version](https://img.shields.io/github/v/release/amirkateb/smart-tools?label=version)](https://github.com/amirkateb/smart-tools/releases)
 [![License](https://img.shields.io/github/license/amirkateb/smart-tools)](https://github.com/amirkateb/smart-tools/blob/main/LICENSE)
 > Developed by **Amir Mohammad Kateb Saber**
